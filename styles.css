@@ -1,0 +1,1797 @@
+/* Custom CSS for The HEJJE Run Club */
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Stack+Sans+Notch:wght@200..700&display=swap');
+
+:root {
+    --primary-color: #6C7A59; /* Dark Olive/Khaki Green */
+    --secondary-color: #A07F6D; /* Brown/Tan for 'Join now' button */
+    --text-color: #FFFFFF;
+    --font-family-title: 'Stack Sans Notch','Georgia', serif; /* Use a serif font for the bold headline */
+    --font-family-nav: 'Elms Sans','Arial', sans-serif;
+    --mobile-menu-bg: #4A5540; /* A slightly darker or different shade for mobile menu */
+}
+
+body {
+    background-color: var(--primary-color);
+    font-family: 'Elms Sans', 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll due to parallax */
+}
+
+/* --- Custom Scrollbar Styling --- */
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+  width: 8px;              /* Thin and subtle */
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f5f5;     /* Light neutral background */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #6C7A59;     /* Your HEJJE primary green */
+  border-radius: 10px;
+  border: 2px solid #f5f5f5; /* Adds breathing space around thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #556147;     /* Slightly darker green on hover */
+}
+
+/* For Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #6C7A59; /* thumb | track */
+}
+
+/* Hide any scrollbar pointer or arrow controls (if present on legacy browsers) */
+::-webkit-scrollbar-button {
+  display: none;
+}
+
+
+/* --- Navigation Bar Styling --- */
+.custom-navbar {
+    background-color: transparent !important; /* Start transparent for the hero */
+    padding: 1rem 1.5rem; /* Vertical and horizontal spacing */
+    transition: background-color 0.3s ease; /* For potential scroll effect in JS */
+    border-bottom: none; /* Remove any default border */
+}
+
+/* Ensure navbar is opaque when collapsed/on scroll */
+.custom-navbar.navbar-scrolled,
+.custom-navbar.show { /* 'show' class is added by Bootstrap when collapsed menu is open */
+    background-color: var(--primary-color) !important;
+}
+
+
+/* Responsive Logo - always centered */
+.navbar-brand {
+    padding: 0; /* Remove default padding */
+    position: absolute; /* Absolute positioning for centering */
+    left: 50%;
+    transform: translateX(-50%); /* Centering trick */
+    display: flex;
+    flex-direction: column; /* Stack image and text */
+    align-items: center;
+    text-align: center;
+    z-index: 1050; /* Ensure logo is above other nav elements */
+}
+
+.logo-img {
+    /* Reset these properties to default, they should be managed by media queries */
+    padding-top: 100px;
+    margin-top: 100px;
+    height: 350px; /* Default for desktop/laptop */
+    width: auto;
+    transition: height 0.3s ease; /* Smooth size change */
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--text-color);
+    line-height: 1; /* Tighter line spacing */
+    margin-top: 5px; /* Space between logo and text */
+}
+
+.logo-subtext {
+    font-size: 0.75rem;
+    color: var(--text-color);
+    line-height: 1;
+}
+
+/* Center navbar links for larger screens, but move register to far right */
+.navbar-collapse {
+    justify-content: flex-end; /* Pushes content to the right */
+}
+
+.navbar-nav .nav-link {
+    color: white;
+    font-family: var(--font-family-nav);
+    font-size: 1rem;
+    margin-left: 1.5rem; /* Spacing between links */
+}
+
+/* Mobile Toggler - Right aligned and opaque, order changed */
+.navbar-toggler {
+    margin-left: auto; /* Pushes the toggler to the far right */
+    margin-right: 1rem; /* Space from the edge */
+    background-color: var(--primary-color); /* Make it opaque */
+    padding: 0.5rem 0.75rem;
+    z-index: 1060; /* Ensure toggler is above the logo when active */
+    /* Removed: order: 1; as margin-left: auto handles the right alignment better */
+}
+
+.navbar-toggler-icon {
+    background-image: url("images/image.png");
+}
+
+/* Register Button */
+.btn-register {
+    background-color: #000000;
+    color: var(--text-color);
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 0.5rem 1.5rem;
+    border: 1px solid #000000;
+    margin-right: 1rem; /* Space from right edge on desktop */
+}
+
+/* --- Hero Section Styling --- */
+.hero-section {
+    position: relative;
+    height: 90vh; /* Full viewport height */
+    width: 100%;
+    background-color: var(--primary-color);
+    padding-top: 56px; /* Default small padding for top of hero section */
+    overflow: hidden; /* Crucial for containing parallax icons */
+    text-align: center;
+}
+
+/* --- WHY HEJJE Section --- */
+.why-hejje-section {
+  background-color: #FFFBD5;
+  padding: 6rem 1rem;
+  color: #4A5540;
+}
+
+.feature-card {
+  background-color: #fffef0;
+  border: none;
+  text-align: center;
+  transition: all 0.3s ease;
+  min-height: 350px;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Animated Icon Styling */
+.icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.animate-icon {
+  font-size: 3.5rem;
+  color: var(--primary-color);
+  animation: floatIcon 3s ease-in-out infinite;
+}
+
+.p-5{
+    padding-top: 4rem !important;
+}
+
+/* Float Animation */
+@keyframes floatIcon {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* --- Responsive adjustments --- */
+@media (max-width: 991.98px) {
+  .feature-card {
+    min-height: 280px;
+    padding: 2.5rem;
+  }
+  .animate-icon {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .feature-card {
+    min-height: 250px;
+    padding: 2rem;
+  }
+  .animate-icon {
+    font-size: 2.5rem;
+  }
+}
+
+
+
+/* Adjust hero section padding to account for large logo on desktop/laptop */
+@media (min-width: 992px) {
+    .hero-section {
+        padding-top: 150px; /* Logo height (300px) + some extra spacing */
+    }
+}
+
+
+.hero-headline {
+    font-family: var(--font-family-title);
+    color: white;
+    font-size: 7.5rem; /* Desktop size */
+    font-weight: 900;
+    line-height: 1.2;
+    margin: 8rem 0 3rem; /* Adjust vertical centering */
+    position: relative; /* Ensure it stays above icons */
+    bottom: 5rem;
+    z-index: 2;
+}
+
+/* CTA Buttons */
+.btn-cta-primary {
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+    border: 1px solid var(--secondary-color);
+    border-radius: 5px;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+/* Note: Using a CSS preprocessor function like darken() is not standard CSS. 
+   If you aren't using one, replace this with a fixed color value. */
+/* .btn-cta-primary:hover {
+    background-color: darken(var(--secondary-color), 10%); 
+} */
+
+
+.btn-cta-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--text-color);
+    border-radius: 5px;
+    padding: 0.75rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.btn-cta-secondary:hover {
+    background-color: var(--text-color);
+    color: var(--primary-color);
+}
+
+/* --- Background Icons (Using Font Awesome for simplicity) --- */
+.hero-section i {
+    position: absolute;
+    font-size: 6rem; /* Base size for desktop */
+    color: rgba(255, 255, 255, 0.15); /* Subtler white for the illustrated effect */
+    opacity: 0.7;
+    z-index: 1; /* Place behind the text */
+    pointer-events: none; /* Icons won't interfere with mouse events */
+    transition: transform 0.1s linear; /* Smooth parallax movement */
+}
+
+/* Initial positions for parallax */
+.icon-watch { top: 15%; left: 10%; }
+.icon-runner { bottom: 20%; left: 15%; } /* Changed to bottom for better spread */
+.icon-bottle { top: 20%; right: 10%; }
+.icon-shoe { bottom: 15%; right: 10%; }
+
+/* Default smaller logo when mobile menu is active */
+.logo-img.mobile-menu-active {
+    height: 60px !important; /* Adjust this value as needed for the smaller size */
+    margin-top: 10px !important; /* Adjust if needed to position it lower */
+}
+
+/* --- Sticky Navbar --- */
+.custom-navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+
+/* --- Centered Logo --- */
+.navbar-brand {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* --- Shrink Logo on Scroll --- */
+.logo-img.logo-scrolled {
+    height: 70px !important;
+    padding-top: 0;
+    margin-top: 0;
+}
+
+/* --- ABOUT HERO SECTION (with true parallax + proper cropping) --- */
+.about-hero-section {
+  position: relative;
+  background-image: url("images/first.jpg"); /* your image */
+  background-size: cover;         /* keeps correct crop */
+  background-position: center center; /* centers the subject */
+  background-repeat: no-repeat;
+  background-attachment: fixed;   /* creates the parallax feel */
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--text-color);
+  overflow: hidden;
+}
+
+.about-hero-section .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45); /* dark overlay */
+  z-index: 1;
+}
+
+.about-hero-section .content {
+  position: relative;
+  z-index: 2;
+  padding: 0 1rem;
+  max-width: 1300px;
+}
+
+.about-hero-title {
+  font-family: var(--font-family-title);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1.1;
+  color: #FFFBD5;
+  opacity: 80%;
+  text-transform: uppercase;
+}
+
+.about-us{
+    background-color: #4A5540;
+}
+
+/* --- Responsiveness --- */
+@media (max-width: 991.98px) {
+  .about-hero-section {
+    background-attachment: scroll; /* disables parallax for mobile */
+    min-height: 70vh;
+    background-position: center top; /* keeps focus near face/top */
+  }
+  .about-hero-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .about-hero-section {
+    min-height: 60vh;
+  }
+  .about-hero-title {
+    font-size: 1.5rem;
+  }
+  .btn-cta-primary {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+  }
+}
+
+/* --- WHO CAN JOIN Section --- */
+.who-join-section {
+  background-color: var(--primary-color);
+  color: #FFFBD5;
+  padding: 6rem 1rem;
+}
+
+/* Join Cards */
+.join-card {
+  position: relative;
+  width: 100%;
+  height: 290px;
+  background-color: #FFFBD5;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.join-card:hover {
+  height: 350px;
+  background-color: #fffbe2;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+/* Front (title) */
+.join-card .card-front {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--primary-color);
+  padding: 8rem 1rem;
+  transition: all 0.3s ease;
+}
+
+/* Back (info) */
+.join-card .card-back {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  transform: translateY(100%);
+  padding: 1rem;
+  background-color: transparent;
+  color: #6C7A59;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  transition: all 0.4s ease;
+}
+
+.join-card:hover .card-back {
+  transform: translateY(-30%);
+}
+
+.join-card:hover .card-front {
+  transform: translateY(-30%);
+}
+
+/* Right Image */
+.join-img {
+  border-radius: 1rem;
+  max-width: 80%;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.join-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* --- Hover Animation for Top & Bottom Logic --- */
+
+/* Base transition for smooth expand */
+.join-card {
+  transition: all 0.4s ease;
+}
+
+/* Expands downward (top row) */
+.join-card.expanded-down {
+  height: 350px;
+  transform: translateY(0);
+  z-index: 2;
+}
+
+/* Expands upward (bottom row) */
+.join-card.expanded-up {
+  height: 350px;
+  transform: translateY(-80px);
+  z-index: 2;
+}
+
+/* Hide the opposite card */
+.hidden-card {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+/* Adjust hover text reveal */
+.join-card.expanded-down .card-back,
+.join-card.expanded-up .card-back {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.join-card.expanded-down .card-front,
+.join-card.expanded-up .card-front {
+  transform: translateY(-30%);
+}
+
+/* --- Responsive Fix: Make Card Text Visible on Smaller Screens --- */
+
+/* Tablet view (md: 768px–991px) */
+@media (max-width: 991.98px) {
+  .join-card {
+    height: 150px;
+    padding: 1rem;
+  }
+
+  .join-card:hover {
+    height: 200px;
+  }
+
+  .join-card .card-front {
+    padding: 3rem 1rem;
+    font-size: 1rem;
+  }
+
+  .join-card .card-back {
+    font-size: 0.9rem;
+    padding: 0.8rem;
+    opacity: 1; /* Always visible on small screens */
+    transform: translateY(0); /* Prevents it from being hidden */
+    position: relative;
+  }
+
+  /* Remove the hover translation logic for simpler experience */
+  .join-card:hover .card-back {
+    transform: translateY(0);
+  }
+
+  .join-card:hover .card-front {
+    transform: none;
+  }
+}
+
+/* Phone view (sm: <768px) */
+@media (max-width: 767.98px) {
+  .join-card {
+    height: 180px;
+    min-height: 180px;
+    padding: 1rem;
+  }
+
+  .join-card .card-front {
+    padding: 3rem 1rem 2rem;
+    font-size: 1rem;
+  }
+
+  .walkers{
+    margin-top: 40px;
+  }
+
+  .join-card .card-back {
+    opacity: 1;
+    transform: none;
+    position: relative;
+    padding: 1rem 1rem 1rem;
+    font-size: 0.7rem;
+    line-height: 2;
+  }
+
+  /* Simplify mobile hover to avoid overlapping movement */
+  .join-card:hover {
+    height: auto;
+  }
+}
+
+
+/* --- DISTANCES WE TRAIN FOR --- */
+.train-distances-section {
+  background-color: #FFFBD5;
+  overflow: hidden;
+  color: #4A5540;
+}
+
+/* Left image block */
+.train-image {
+  width: 100%;
+  height: 480px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.8s ease-out;
+  will-change: transform;
+}
+
+/* Parallax effect on scroll */
+@media (min-width: 992px) {
+  .train-image {
+    background-attachment: fixed;
+  }
+}
+
+/* Grid for cards */
+.train-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px));
+  gap: 1.2rem;
+}
+
+/* Each card */
+.train-card {
+  background-color: #6C7A59;
+  color: whitesmoke;
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+
+/* Hover glow and pop-up effect */
+.train-card:hover {
+  background-color: #344F1F;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Hidden description fade-in */
+.train-card p {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  font-size: 0.9rem;
+}
+
+.train-card:hover p {
+  opacity: 1;
+  max-height: 100px;
+  margin-top: 8px;
+}
+
+/* Title stays visible */
+.train-card h5 {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .train-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 767px) {
+  .train-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .train-image {
+    height: 280px;
+    background-attachment: scroll;
+  }
+}
+
+
+/* --- COACH CERTIFICATION SECTION (Centered Layout) --- */
+.coach-cert-section {
+  background-color: #6C7A59;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cert-title {
+  font-family: 'Stack Sans Notch','Georgia', serif;
+  font-weight: 700;
+  color: #FFFBD5;
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+}
+
+.cert-logo-box {
+  background-color: #FFFBD5;
+  border-radius: 20px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 3rem;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.15);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.cert-logo-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 35px rgba(0, 0, 0, 0.2);
+}
+
+.cert-logo {
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cert-text {
+  color: #FFFBD5;
+  font-size: 1.05rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.btn-cert {
+  background-color: #A07F6D;
+  color: #fff;
+  padding: 0.8rem 2.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.btn-cert:hover {
+  background-color: #FFFBD5;
+  box-shadow: 0 6px 20px rgba(108, 122, 89, 0.3);
+}
+
+/* Optional subtle glow animation for background */
+.coach-cert-section::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.445), transparent 70%);
+  animation: softGlow 8s ease-in-out infinite alternate;
+  z-index: 0;
+}
+
+@keyframes softGlow {
+  0% { transform: translate(0, 0); opacity: 0.5; }
+  100% { transform: translate(10%, 10%); opacity: 0.2; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .cert-logo {
+    width: 150px;
+  }
+  .cert-title {
+    font-size: 1.8rem;
+  }
+  .cert-text {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+}
+
+/* --- Decorative Background Icons for Coach Section --- */
+.coach-cert-section i {
+  position: absolute;
+  color: rgba(255, 255, 255, 0.15); /* subtle white tint */
+  font-size: 6rem;
+  z-index: 1;
+  opacity: 0.7;
+  pointer-events: none; /* prevent mouse interference */
+  transition: transform 0.2s linear;
+}
+
+/* Left icon */
+.icon-left {
+  top: 25%;
+  left: 5%;
+  transform: rotate(-15deg);
+}
+
+/* Right icon */
+.icon-right {
+  bottom: 20%;
+  right: 5%;
+  transform: rotate(20deg);
+}
+
+/* Make sure main content stays above icons */
+.coach-cert-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Responsive icon scaling */
+@media (max-width: 991.98px) {
+  .coach-cert-section i {
+    font-size: 5rem;
+  }
+  .icon-left { top: 20%; left: 3%; }
+  .icon-right { bottom: 10%; right: 3%; }
+}
+
+@media (max-width: 767.98px) {
+  .coach-cert-section i {
+    font-size: 3rem;
+  }
+  .icon-left { top: 20%; left: 2%; }
+  .icon-right { bottom: 8%; right: 2%; }
+}
+
+/* --- TRAINING STRUCTURE SECTION --- */
+.training-structure-section {
+  background-color: #FFFBD5;
+  color: #6C7A59;
+  padding: 1rem 1rem;
+  text-align: center;
+}
+
+.training-title {
+  font-family: 'Elms Sans','Georgia', serif;
+  color: var(--primary-color);
+  font-size: 2.2rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+
+/* Tabs */
+.tab-buttons {
+  gap: 1rem;
+}
+
+.tab-btn {
+  background-color: transparent;
+  border: 2px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 0.7rem 1.5rem;
+  font-weight: 600;
+  border-radius: 30px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background-color: var(--primary-color);
+  color: #FFFBD5;
+  transform: scale(1.05);
+}
+
+.tab-btn:hover {
+  background-color: var(--primary-color);
+  color: #FFFBD5;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Box Styling */
+.tab-box {
+  background-color: #ffffff;
+  border-radius: 16px;
+  padding: 4rem;
+  box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+  text-align: left;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.tab-subtitle {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 1.2rem;
+}
+
+.structure-list {
+  list-style: none;
+  padding-left: 0;
+  line-height: 1.8;
+}
+
+.structure-list li::before {
+  content: "✔ ";
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* Responsive Layout */
+@media (max-width: 767.98px) {
+  .training-title {
+    font-size: 1.8rem;
+  }
+
+  .tab-btn {
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 0.5rem;
+  }
+
+  .tab-box {
+    padding: 1.5rem;
+  }
+}
+
+/* --- NEXT STEPS SECTION (Single Row Layout) --- */
+.next-steps-section {
+  background-color: #4A5540; /* dark greenish base */
+  color: #6C7A59;
+  padding: 1rem 1rem;
+}
+
+.steps-title {
+  font-weight: 700;
+  font-family: 'Elms Sans','Georgia', serif;
+  font-size: 2.5rem;
+  color: #FFFBD5;
+}
+
+.steps-subtitle {
+  color: #6C7A59;
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* Step Items */
+.step-item {
+  text-align: center;
+  max-width: 500px;
+}
+
+.step-number {
+  display: block;
+  font-size: 8rem;
+  font-weight: 900;
+  color: var(--secondary-color); /* brown/tan accent */
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+  font-family: 'Georgia', serif;
+}
+
+.step-heading {
+  font-weight: 700;
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+  color: #c9c89d;
+}
+
+.step-item p {
+  font-size: 0.9rem;
+  color: whitesmoke;
+  line-height: 1.4;
+}
+
+.step-item a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.step-item a:hover {
+  text-decoration: none;
+}
+
+/* Button */
+.btn-steps {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn-steps:hover {
+  background-color: #8b6b5a;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+  transform: translateY(-2px);
+}
+
+/* Responsive Layout */
+@media (max-width: 991.98px) {
+  .step-number {
+    font-size: 4rem;
+  }
+  .step-heading {
+    font-size: 1rem;
+  }
+  .step-item p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .row.g-5 {
+    gap: 2rem 0;
+  }
+  .step-item {
+    max-width: none;
+    width: 100%;
+  }
+  .step-number {
+    font-size: 3.5rem;
+  }
+}
+
+
+/* --- PROGRAM OPTIONS SECTION --- */
+.program-options-section {
+  background-color: #FFFBD5;
+  color: var(--primary-color);
+  padding: 1rem 1rem;
+}
+
+.program-title {
+  font-family: 'Elms Sans','Georgia', serif;
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.program-subtitle {
+  font-size: 1rem;
+  color: #6c7a59;
+  font-weight: 500;
+}
+
+/* Card Styling */
+.program-card {
+  background-color: #fffef0;
+  border-radius: 1.2rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+  padding: 3rem 1.5rem;
+}
+
+.program-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  background-color: #fffbe8;
+}
+
+.program-card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.program-card-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.program-duration {
+  font-weight: 600;
+  color: #a38b6b;
+  margin-bottom: 1rem;
+}
+
+.program-description {
+  font-size: 1rem;
+  color: #5a5a42;
+  line-height: 1.6;
+}
+
+/* --- Program Card Icons --- */
+.program-icon {
+  font-size: 2.8rem; /* Adjust for emoji/icons */
+  margin-bottom: 1rem;
+  color: var(--primary-color); /* HEJJE green */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover animation */
+.program-card:hover .program-icon {
+  transform: scale(1.1);
+  color: var(--secondary-color); /* brown accent */
+}
+
+/* If using images instead of emojis */
+.program-icon img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.program-card:hover .program-icon img {
+  transform: scale(1.1);
+}
+
+
+/* Responsive Adjustments */
+@media (max-width: 991.98px) {
+  .program-card {
+    padding: 2rem 1rem;
+  }
+  .program-card-title {
+    font-size: 1.3rem;
+  }
+  .program-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .program-options-section {
+    padding: 4rem 1rem;
+  }
+  .program-card {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* --- FAQ SECTION --- */
+.faq-section {
+  background-color: #f6f5e4;
+  color: var(--primary-color);
+  padding: 1rem 1rem;
+}
+
+.faq-title {
+  font-family: 'Elms Sans','Georgia', serif;
+  font-weight: 700;
+  font-size: 2.2rem;
+  margin-bottom: 3rem;
+  color: var(--primary-color);
+}
+
+.faq-container {
+  max-width: 750px;
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 4rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.faq-item + .faq-item {
+  margin-top: 1.5rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 1.5rem;
+}
+
+.faq-question {
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: var(--secondary-color);
+}
+
+.faq-answer {
+  font-size: 0.95rem;
+  color: #4a4a4a;
+  line-height: 1.6;
+  display: none; /* hidden by default for toggle effect */
+}
+
+/* --- FOOTER SECTION --- */
+.hejje-footer {
+  background-color: var(--primary-color);
+  color: #FFFBD5;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer-logo {
+  font-family: 'Georgia', serif;
+  font-weight: 700;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.footer-social {
+  margin-bottom: 1rem;
+}
+
+.footer-icon {
+  display: inline-block;
+  color: #FFFBD5;
+  font-size: 1.5rem;
+  margin: 0 0.6rem;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-icon:hover {
+  color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #e7e6c2;
+}
+
+/* Responsive */
+@media (max-width: 767.98px) {
+  .faq-container {
+    padding: 1.5rem;
+  }
+  .faq-question {
+    font-size: 1rem;
+  }
+  .faq-answer {
+    font-size: 0.9rem;
+  }
+}
+
+
+
+/* --- Responsiveness (Media Queries) --- */
+
+/* Adjustments for Large Desktops (if needed, e.g., wider icon spread) */
+@media (min-width: 1200px) {
+    .icon-watch { left: 15%; }
+    .icon-runner { left: 5%; }
+    .icon-bottle { right: 15%; }
+    .icon-shoe { right: 5%; }
+}
+
+
+/* Tablet (md breakpoint: >= 768px and < 992px) */
+@media (max-width: 991.98px) {
+    /* Logo scaling for tablets */
+    .logo-img {
+        height: 300px; /* Reduced for tablets */
+    }
+
+    .logo-img.mobile-menu-active {
+        height: 200px !important; /* Smaller size when menu is active (was 150px) */
+        margin-top: 0px !important; /* Consistent margin when menu is active (was 0px) */
+    }
+
+    .logo-text, .logo-subtext {
+        display: block !important; /* Ensure text is visible on tablet */
+    }
+
+    /* Adjust hero section padding for tablet */
+    .hero-section {
+        padding-top: 180px; /* Logo height (150px) + some extra spacing */
+    }
+
+    .hero-headline {
+        font-size: 3.2rem; /* Smaller headline for tablet */
+        margin-top: 6rem; /* Adjust margin */
+    }
+
+    /* Adjust icon sizes and positions for tablet */
+    .hero-section i {
+        font-size: 4.5rem;
+    }
+    .icon-watch { top: 10%; left: 5%; }
+    .icon-runner { bottom: 15%; left: 5%; }
+    .icon-bottle { top: 15%; right: 5%; }
+    .icon-shoe { bottom: 10%; right: 5%; }
+
+    /* For collapsed menu, ensure links and register button are centered */
+    .navbar-collapse {
+        justify-content: center !important;
+        background-color: var(--mobile-menu-bg); /* Use new mobile menu background */
+        position: absolute; /* Position it absolutely */
+        top: 0; /* Align to the top of the navbar */
+        right: 0; /* Align to the right */
+        width: 100%; /* Full width */
+        height: 100vh; /* Full viewport height for overlay effect */
+        overflow-y: auto; /* Allow scrolling if menu is too long */
+        padding-top: 60px; /* Push content below the toggler */
+        transform: translateX(100%); /* Start off-screen */
+        transition: transform 0.3s ease-out;
+    }
+    .navbar-collapse.show {
+        transform: translateX(0); /* Slide in */
+    }
+
+    .navbar-nav {
+        margin-right: 0 !important;
+        text-align: center;
+        width: 100%;
+        padding-top: 70px;
+    }
+    .nav-link {
+        margin: 0.5rem 0 !important;
+    }
+    .btn-register {
+        margin: 10px auto;
+        display: block;
+        width: 80%;
+    }
+
+    .navbar-brand.mobile-menu-active .logo-text,
+    .navbar-brand.mobile-menu-active .logo-subtext {
+        display: none !important;
+    }
+}
+
+/* Phone (sm breakpoint: < 768px) */
+@media (max-width: 767.98px) {
+    .custom-navbar {
+        padding: 0.8rem 1rem;
+    }
+
+    /* Logo scaling for phones */
+    .navbar-brand {
+        left: 50%; /* Keep centered */
+        transform: translateX(-50%);
+        flex-direction: column; /* Stack img and text */
+        width: auto; /* Allow content to dictate width */
+    }
+
+    /* ENSURE the mobile-menu-active size is small on phone screens too */
+    .logo-img.mobile-menu-active {
+        height: 130px !important; /* Smaller size when menu is active (was 150px) */
+        margin-top: 10px !important; /* Consistent margin when menu is active (was 0px) */
+    }
+
+    .logo-img {
+        padding-top: 50px;
+        margin-top: 50px;
+        height: 150px;
+    }
+    .navbar-brand .d-flex { /* Hide logo text on smallest screens */
+        display: none !important;
+    }
+
+    /* Adjust hero section padding for phone */
+    .hero-section {
+        padding-top: 100px; /* Logo height (80px) + some extra spacing */
+    }
+
+    .navbar-toggler {
+        margin-right: 0.5rem; /* Closer to edge for right side */
+        margin-left: auto; /* Ensure it is pushed right */
+    }
+
+    .hero-headline {
+        font-size: 2.2rem; /* Even smaller headline for phone */
+        margin-top: 4rem; /* Adjust margin */
+    }
+
+    /* Stack CTA buttons on very small screens */
+    .cta-buttons button {
+        display: block;
+        width: 80%;
+        margin: 1rem 2.2rem;
+    }
+    .btn-cta-primary {
+        margin-right: 0 !important; /* Remove right margin from primary button */
+    }
+
+    /* Adjust icon sizes and positions for phone */
+    .hero-section i {
+        font-size: 3rem; /* Smallest icon size */
+    }
+    .icon-watch { top: 8%; left: 8%; }
+    .icon-runner { bottom: 10%; left: 8%; }
+    .icon-bottle { top: 12%; right: 8%; }
+    .icon-shoe { bottom: 8%; right: 8%; }
+}
+
+/* --- ABOUT PAGE SECTIONS --- */
+
+/* Hero section with parallax */
+
+.navbar-about{
+  position: absolute;
+}
+
+.about-hero {
+  background: url('images/about-hero.jpg') center/cover fixed no-repeat;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+  font-family: 'Stack Sans Notch','sans-serif';
+}
+
+.about-title{
+  padding-top: 10rem;
+  font-size: 7rem;
+}
+
+/* Light background section */
+.about-section {
+  background-color: #FFFBD5;
+  color: #4A5540;
+}
+
+/* Green theme block */
+.philosophy-section {
+  background-color: var(--primary-color);
+  color: #FFFBD5;
+}
+
+/* Coach section */
+.coach-section {
+  background-color: #fff;
+  color: var(--primary-color);
+}
+.coach-section img {
+  transition: transform 0.3s ease;
+}
+.coach-section img:hover {
+  transform: scale(1.05);
+}
+
+/* ===============================
+   RESPONSIVE MEDIA QUERIES
+   For About Page
+   =============================== */
+
+/* --- Large Desktops (≥1200px) --- */
+@media (min-width: 1200px) {
+  .about-title {
+    font-size: 7rem;
+    padding-top: 10rem;
+  }
+  .about-hero {
+    height: 85vh;
+  }
+  .coach-section img {
+    max-width: 240px;
+  }
+}
+
+/* --- Laptops & Desktops (≥992px and <1200px) --- */
+@media (max-width: 1199.98px) {
+  .about-title {
+    font-size: 6rem;
+    padding-top: 8rem;
+  }
+  .about-hero {
+    height: 80vh;
+    background-attachment: fixed; /* Keep parallax smooth on larger screens */
+  }
+  .navbar-about {
+    position: fixed;
+  }
+}
+
+/* --- Tablets (≥768px and <992px) --- */
+@media (max-width: 991.98px) {
+  .about-title {
+    font-size: 4rem;
+    padding-top: 7rem;
+  }
+  .about-hero {
+    height: 70vh;
+    background-attachment: scroll; /* Disable parallax for performance on tablets */
+  }
+
+  .about-section,
+  .philosophy-section,
+  .coach-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .coach-section img {
+    max-width: 180px;
+    margin-bottom: 1rem;
+  }
+
+  .philosophy-section p,
+  .about-section p {
+    font-size: 1rem;
+  }
+
+  .navbar-about {
+    position: fixed;
+  }
+}
+
+/* --- Phones (≥576px and <768px) --- */
+@media (max-width: 767.98px) {
+  .about-title {
+    font-size: 3rem;
+    padding-top: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-hero {
+    height: 65vh;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .about-section p,
+  .philosophy-section p {
+    font-size: 0.95rem;
+    padding: 0 1rem;
+  }
+
+  .coach-section h4 {
+    font-size: 1.2rem;
+  }
+
+  .coach-section img {
+    max-width: 160px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .footer-logo img {
+    height: 70px;
+  }
+
+  .navbar-about{
+    position: absolute;
+  }
+}
+
+/* --- Small Phones (<576px) --- */
+@media (max-width: 575.98px) {
+  .about-title {
+    font-size: 2.2rem;
+    padding-top: 6rem;
+    line-height: 1.1;
+  }
+
+  .about-hero {
+    height: 60vh;
+    background-position: center;
+  }
+
+  .about-section,
+  .philosophy-section,
+  .coach-section {
+    padding: 3rem 1rem;
+  }
+
+  .coach-section img {
+    max-width: 130px;
+  }
+
+  .coach-section p {
+    font-size: 0.9rem;
+  }
+
+  .footer-logo img {
+    height: 60px;
+  }
+
+  .footer-icon {
+    font-size: 1.2rem;
+    margin: 0 0.4rem;
+  }
+}
+
+/* --- About Hero Icons --- */
+.about-hero i.about-icon {
+  position: absolute;
+  font-size: 4rem;
+  color: rgba(255, 255, 255, 0.76);
+  z-index: 1;
+  opacity: 0.8;
+  transition: transform 0.1s linear;
+  pointer-events: none;
+}
+
+/* Icon placements */
+.icon-run {
+  top: 15%;
+  left: 10%;
+}
+
+.icon-leaf {
+  bottom: 20%;
+  right: 12%;
+}
+
+.icon-strength {
+  top: 25%;
+  right: 20%;
+}
+
+.icon-community {
+  bottom: 10%;
+  left: 15%;
+}
+
+/* Responsive adjustments for tablets */
+@media (max-width: 991.98px) {
+  .about-hero i.about-icon {
+    font-size: 4.5rem;
+  }
+  .icon-run { top: 10%; left: 8%; }
+  .icon-leaf { bottom: 15%; right: 8%; }
+  .icon-strength { top: 18%; right: 10%; }
+  .icon-community { bottom: 8%; left: 10%; }
+}
+
+/* Small phones */
+@media (max-width: 575.98px) {
+  .about-hero i.about-icon {
+    font-size: 3rem;
+    opacity: 0.5;
+  }
+}
+
+/* --- CORE OPERATIONAL PROCESS --- */
+.core-process-section {
+  background-color: #FFFBD5;
+  color: #4A5540;
+}
+
+.core-process-section .section-title {
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.process-list {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.process-item {
+  background-color: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.process-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.process-item h5 {
+  color: var(--primary-color);
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.process-item ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.process-item ul li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+}
+
+.process-item ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--primary-color);
+  font-weight: bold;
+}
+
+/* --- Responsive --- */
+@media (max-width: 991.98px) {
+  .core-process-section {
+    padding: 4rem 1.5rem;
+  }
+  .process-item {
+    padding: 1.5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .core-process-section .section-title {
+    font-size: 1.6rem;
+  }
+  .process-item {
+    padding: 1.2rem;
+  }
+  .process-item ul li {
+    font-size: 0.95rem;
+  }
+}
+
+
+/* --- COACH SECTION --- */
+.coach-section {
+  background-color: #FFF;
+  color: #4A5540;
+}
+
+.coach-photo-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.coach-photo {
+  border: 6px solid var(--primary-color);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.coach-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.profile-heading {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+.profile-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  color: #4A5540;
+}
+
+.profile-list strong {
+  color: var(--primary-color);
+}
+
+.about-coach p {
+  font-size: 0.98rem;
+  line-height: 1.7;
+  color: #4A5540;
+}
+
+/* --- Philosophy Block --- */
+.philosophy-block {
+  background-color: var(--primary-color);
+  color: #FFFBD5;
+  border-left: 6px solid #FFFBD5;
+}
+
+.philosophy-block p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+.philosophy-quote {
+  font-style: italic;
+  color: #FFF;
+  border-left: 4px solid #FFFBD5;
+  padding-left: 1rem;
+  font-size: 1.1rem;
+}
+
+/* --- Responsive --- */
+@media (max-width: 991.98px) {
+  .coach-photo {
+    max-width: 180px;
+  }
+  .profile-list li {
+    font-size: 0.9rem;
+  }
+  .philosophy-block {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .coach-section {
+    text-align: center;
+  }
+  .profile-list li {
+    text-align: left;
+  }
+  .philosophy-block {
+    text-align: left;
+    padding: 1.8rem;
+  }
+}

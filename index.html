@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The HEJJE Run Club</title>
+    <link rel="icon" href="images/logo.png" type="image/x-icon">   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-xl fixed-top custom-navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/logo.png" alt="The HEJJE Run Club Logo" class="logo-img">
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto me-lg-5"> <a class="nav-link active" href="#">Home</a>
+                    <a class="nav-link" href="about-us.html">About</a>
+                    <a class="nav-link" href="https://wa.me/9980182813?text=Hey%20👋%20I'm%20interested%20in%20joining%20HEJJE!" target="_blank">Contact</a>
+                </div>
+                <a href="#" class="btn btn-register d-lg-block">Register</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-white d-flex flex-column justify-content-center align-items-center">
+        <i class="fas fa-stopwatch icon-watch" data-speed="-1" aria-hidden="true"></i>
+        <i class="fas fa-running icon-runner" data-speed="1" aria-hidden="true"></i>
+        <i class="fas fa-bottle-water icon-bottle" data-speed="0.5" aria-hidden="true"></i>
+        <i class="fas fa-shoe-prints icon-shoe" data-speed="-0.7" aria-hidden="true"></i>
+
+        <div class="container text-center">
+            <h1 class="hero-headline my-5">A WAY OF LIFE,<br>ANY AGE, ANY PACE.</h1>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-cta-primary me-3"><a href="https://forms.gle/jdA9u114ZN38GYMt8" style="text-decoration: none; color: white;">Join now.</a></button>
+                <button class="btn btn-cta-secondary"><a href="#train" style="text-decoration: none; color: #4A5540;">Learn more.</a></button>
+            </div>
+        </div>
+    </header>
+
+    <section class="why-hejje-section py-5">
+  <div class="container text-center">
+    <h1 class="section-title mb-5">
+      Why Hejje 
+      <i class="fa-solid fa-shoe-prints text-dark align-middle ms-2"></i>
+    </h1>
+
+    <div class="row g-4 justify-content-center">
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="feature-card p-5 rounded-4 shadow-lg h-100">
+          <div class="icon-wrapper mb-4">
+            <i class="fa-solid fa-dumbbell animate-icon"></i>
+          </div>
+          <h4 class="fw-bold mb-3">Structured Training</h4>
+          <p>Structured strength, training and mindful recovery — not just about miles.</p>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="feature-card p-5 rounded-4 shadow-lg h-100">
+          <div class="icon-wrapper mb-4">
+            <i class="fa-solid fa-people-group animate-icon"></i>
+          </div>
+          <h4 class="fw-bold mb-3">Inclusive Tribe</h4>
+          <p>Movement-focused tribe for all ages and paces — shared stories, shared runs.</p>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-12 col-md-6 col-lg-4">
+        <div class="feature-card p-5 rounded-4 shadow-lg h-100">
+          <div class="icon-wrapper mb-4">
+            <i class="fa-solid fa-person-running animate-icon"></i>
+          </div>
+          <h4 class="fw-bold mb-3">Sustainable Growth</h4>
+          <p>Build sustainable fitness and grow stronger — one hejje at a time.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+    <!-- START: ABOUT HERO SECTION -->
+<section class="about-hero-section d-flex flex-column justify-content-center align-items-center text-center">
+  <div class="overlay"></div>
+  <div class="content">
+    <h3 class="about-hero-title">“HEJJE is not just a run club — it's footsteps shared for life. For those who believe every step matters, at any age, at any pace”</h1>
+    <a href="about-us.html" class="about-us btn btn-cta-primary mt-4">About Us</a>
+  </div>
+</section>
+<!-- END: ABOUT HERO SECTION -->
+ <!-- START: WHO CAN JOIN SECTION -->
+<section class="who-join-section py-5">
+  <div class="container text-center">
+    <h1 class="section-title mb-5">
+      Who Can Join? <i class="fa-solid fa-shoe-prints text-dark ms-2"></i>
+    </h1>
+
+    <div class="row justify-content-center align-items-center g-4">
+      <!-- Left Column: Cards -->
+      <div class="col-12 col-lg-7">
+        <div class="row g-4">
+          <!-- Card 1 -->
+          <div class="col-6 col-md-6">
+            <div class="join-card">
+              <div class="card-front">Walkers <img src="images/drop.png" alt="" style="height: 20px;"></div>
+              <div class="card-back">
+                <p class="walkers">Building consistency & discipline — one step at a time.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-6 col-md-6">
+            <div class="join-card">
+              <div class="card-front">Joggers & Runners <img src="images/drop.png" alt="" style="height: 20px;"></div>
+              <div class="card-back">
+                <p>Preparing for 5K, 10K, Half Marathon or Marathon.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-6 col-md-6">
+            <div class="join-card">
+              <div class="card-front">Fitness Enthusiasts <img src="images/drop.png" alt="" style="height: 20px;"></div>
+              <div class="card-back">
+                <p>Focus on strength, stamina & injury prevention.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-6 col-md-6">
+            <div class="join-card">
+              <div class="card-front">Experienced Runners <img src="images/drop.png" alt="" style="height: 20px;"></div>
+              <div class="card-back">
+                <p>Sharpen race performance & achieve new goals.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Image -->
+      <div class="col-12 col-lg-5 text-center">
+        <img src="images/join-us.jpg" alt="Running Group" class="img-fluid rounded-4 shadow join-img">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- END: WHO CAN JOIN SECTION -->
+ <section class="train-distances-section">
+  <div class="container py-5">
+    <h2 class="section-title text-center mb-5">
+      Distances we train for <i class="fa-solid fa-shoe-prints text-dark align-middle ms-2"></i>
+    </h2>
+
+    <div class="row align-items-center g-4">
+      <!-- Left: Runner Image -->
+      <div class="col-lg-5 col-md-12">
+        <div class="train-image" style="background-image: url('images/runner.jpg');"></div>
+      </div>
+
+      <!-- Right: Training Distance Cards -->
+      <div class="col-lg-7 col-md-12">
+        <div class="train-grid">
+          <div class="train-card">
+            <h5>Walk/Jog Wellness</h5>
+            <p>Structured plans for beginners to start their movement journey.</p>
+          </div>
+          <div class="train-card">
+            <h5>5K</h5>
+            <p>Build endurance and consistency to complete your first 5K.</p>
+          </div>
+          <div class="train-card">
+            <h5>10K</h5>
+            <p>Transition from casual jogger to confident runner.</p>
+          </div>
+          <div class="train-card">
+            <h5>Half Marathon</h5>
+            <p>Structured strength and mileage for 21.1 KM success.</p>
+          </div>
+          <div class="train-card">
+            <h5>Full Marathon</h5>
+            <p>Comprehensive plans to help you conquer 42.2 KM sustainably.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="coach-cert-section text-center position-relative">
+  <!-- Background icons -->
+  <i class="fa-solid fa-shuffle icon-left" aria-hidden="true"></i>
+  <i class="fa-solid fa-chart-line icon-right" aria-hidden="true"></i>
+
+  <div class="container py-5 position-relative">
+    <h2 class="cert-title mb-4">UESCA Certified Running Coach</h2>
+
+    <div class="cert-logo-box mx-auto mb-4">
+      <img src="images/uesca.png" alt="UESCA Certified Logo" class="cert-logo img-fluid">
+    </div>
+
+    <p class="cert-text mb-4 mx-auto">
+      Every HEJJE training plan is guided by a <strong>UESCA Certified Running Coach</strong> —
+      bringing evidence-based training methods, personalized guidance, and safe progression to every runner.
+    </p>
+
+    <a href="https://uesca.com/coach-directory/entry/8671/" class="btn btn-cert">Learn More</a>
+  </div>
+</section>
+
+<section class="training-structure-section" id="train">
+  <div class="container py-5">
+    <h2 class="training-title text-center mb-5">Training Structure <i class="fa-solid fa-shoe-prints text-dark align-middle ms-2"></i></h2>
+
+    <!-- Tabs -->
+    <div class="tab-buttons d-flex justify-content-center flex-wrap mb-4">
+      <button class="tab-btn active" data-tab="weekly">Weekly Structure</button>
+      <button class="tab-btn" data-tab="cycle">3-Phase Training Cycle</button>
+    </div>
+
+    <!-- Tab Contents -->
+    <div class="tab-content active" id="weekly">
+      <div class="tab-box">
+        <h5 class="tab-subtitle">📅 Weekly Structure</h5>
+        <ul class="structure-list">
+          <li><strong>Mon:</strong> Easy walk/run or Threshold Run</li>
+          <li><strong>Tue, Thu, Fri:</strong> Strength training (3 sessions/week)</li>
+          <li><strong>Wed:</strong> Intervals / Speed workouts</li>
+          <li><strong>Sat:</strong> Long run (key endurance builder)</li>
+          <li><strong>Sun:</strong> Recovery, mobility, swimming/cycling, yoga or break day</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tab-content" id="cycle">
+      <div class="tab-box">
+        <h5 class="tab-subtitle">🔁 3-Phase Training Cycle</h5>
+        <p>We train with purpose, not pressure. Each program follows a 3-phase cycle:</p>
+        <ol class="structure-list">
+          <li><strong>Base Building:</strong> Endurance, aerobic strength, injury resistance</li>
+          <li><strong>Intensification:</strong> Speed, intervals, fartlek, long runs</li>
+          <li><strong>Tapering:</strong> Recovery, freshness, race readiness</li>
+        </ol>
+        <p>Every cycle ends with a <em>fun workout</em> (props, ladders, cones) to celebrate progress.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="next-steps-section text-center">
+  <div class="container py-5">
+    <h2 class="steps-title mb-2">Next Steps</h2>
+    <p class="steps-subtitle mb-5">Here’s how to get started with <strong>The HEJJE Run Club</strong></p>
+
+    <div class="row justify-content-center g-5">
+      <div class="col-6 col-md-4 col-lg-2 step-item">
+        <span class="step-number">1</span>
+        <h5 class="step-heading">Fill the Form</h5>
+        <p>Complete registration </p>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 step-item">
+        <span class="step-number">2</span>
+        <h5 class="step-heading">Talk to Coach</h5>
+        <p>Finalize your plan & structure </p>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 step-item">
+        <span class="step-number">3</span>
+        <h5 class="step-heading">Join the Group</h5>
+        <p>Get added to the HEJJE WhatsApp </p>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 step-item">
+        <span class="step-number">4</span>
+        <h5 class="step-heading">Weekly Schedule</h5>
+        <p>Receive weekly training </p>
+      </div>
+
+      <div class="col-6 col-md-4 col-lg-2 step-item">
+        <span class="step-number">5</span>
+        <h5 class="step-heading">Join Runs</h5>
+        <p>Weekend runs & tribe sessions </p>
+      </div>
+    </div>
+
+    <div class="mt-5">
+      <a href="https://forms.gle/jdA9u114ZN38GYMt8" target="_blank" class="btn btn-steps">Join Now</a>
+    </div>
+  </div>
+</section>
+
+<section class="program-options-section text-center">
+  <div class="container py-5">
+    <h2 class="program-title mb-3">Program Options</h2>
+    <p class="program-subtitle mb-5">
+      We offer <strong>3 formats</strong> based on your goals:
+    </p>
+
+    <div class="row justify-content-center g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="program-card">
+          <div class="program-card-body">
+            <!-- Icon -->
+            <div class="program-icon"><img src="images/tribe.png" alt=""></div>
+            <h3 class="program-card-title">Event-based Training</h3>
+            <h6 class="program-duration">(3 Months)</h6>
+            <p class="program-description">
+              Prepare for <strong>10K</strong> or <strong>Half Marathon</strong> events with structured short-term programs that build pace, strength & race confidence.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="program-card">
+          <div class="program-card-body">
+            <div class="program-icon"><img src="images/semi.png" alt=""></div>
+            <h3 class="program-card-title">Semi-Annual Plan</h3>
+            <h6 class="program-duration">(6 Months)</h6>
+            <p class="program-description">
+              Focus on <strong>steady growth</strong> & consistent performance. Ideal for runners who want progress with balance between strength & endurance.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="program-card">
+          <div class="program-card-body">
+            <div class="program-icon"><img src="images/full.png" alt=""></div>
+            <h3 class="program-card-title">Annual Wellness</h3>
+            <h6 class="program-duration">(12 Months)</h6>
+            <p class="program-description">
+              Build <strong>long-term fitness</strong> & running lifestyle — sustainable habits, strength, and tribe for holistic well-being.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- === FAQ SECTION === -->
+<section class="faq-section text-center">
+  <div class="container py-5">
+    <h2 class="faq-title mb-4">Frequently Asked Questions <i class="fa-solid fa-shoe-prints text-dark align-middle ms-2"></i></h2>
+
+    <div class="faq-container mx-auto text-start">
+      <div class="faq-item">
+        <h5 class="faq-question">Do I need to be an experienced runner?</h5>
+        <p class="faq-answer">
+          Not at all! HEJJE welcomes all — from first-time walkers to seasoned marathoners. We start from your current level and build gradually.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h5 class="faq-question">How are the training plans shared?</h5>
+        <p class="faq-answer">
+          Weekly schedules and strength routines are shared directly on our WhatsApp group, along with guidance and check-ins.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h5 class="faq-question">Where do the runs take place?</h5>
+        <p class="faq-answer">
+          Group runs are usually held at scenic, safe routes across the city — mostly early mornings on weekends.
+        </p>
+      </div>
+
+      <div class="faq-item">
+        <h5 class="faq-question">Is there a membership fee?</h5>
+        <p class="faq-answer">
+          Yes, based on your chosen program format (3, 6, or 12 months). You’ll get all details during your initial coach discussion.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- === FOOTER SECTION === -->
+<footer class="hejje-footer text-center">
+  <div class="container py-4">
+    <h4 class="footer-logo mb-3"><img src="images/logo.png" alt="" style="height: 100px;"></h4>
+
+    <div class="footer-social mb-3">
+      <a href="https://www.instagram.com/thehejjerunclub/" target="_blank" class="footer-icon">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/9980182813?text=Hey%20👋%20I'm%20interested%20in%20joining%20HEJJE!" target="_blank" class="footer-icon">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+      <a href="mailto:hejje@example.com" class="footer-icon">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </div>
+
+    <p class="footer-text mb-0">
+      © 2025 The HEJJE Run Club. All Rights Reserved.
+    </p>
+  </div>
+</footer>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
